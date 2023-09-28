@@ -11,9 +11,9 @@ app = FastAPI()
 def main_route():
     return {"API-STATE" : "WORKS"}
 
-@app.get('/table/{table}')
-async def get_table(table: str):
-    return mysql_get_table(table)
+@app.get('/table/items')
+async def get_table():
+    return mysql_get_table('items')
 
 if __name__ == "__main__":
     import uvicorn
