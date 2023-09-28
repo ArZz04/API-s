@@ -1,6 +1,9 @@
 
 import pymongo 
+from db.connnector import get_table as mysql_get_table
+
 from fastapi import FastAPI
+
 
 app = FastAPI()
 
@@ -8,4 +11,10 @@ app = FastAPI()
 def main_route():
     return {"API-STATE" : "WORKS"}
 
-#
+@app.get('/table/{table}')
+async def get_table(table: str):
+    return mysql_get_table(table)
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
