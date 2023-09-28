@@ -1,19 +1,17 @@
-
-import pymongo 
-from db.connnector import get_table as mysql_get_table
-
-from fastapi import FastAPI
-
+from fastapi import FastAPI, Depends, HTTPException, Path
+from db.connnector import get_table 
 
 app = FastAPI()
 
 @app.get('/')
 def main_route():
-    return {"API-STATE" : "WORKS"}
+    return {"API-STATE": "WORKS"}
 
-@app.get('/table/items')
-async def get_table():
-    return mysql_get_table('items')
+@app.get('/table/{table}', response_model=list[list[str]])
+async def get_table_endpoint(table: str = Depends(get_table)):
+    if table is None:
+        raise HTTPException(status_code=404, detail=f'The table "{table}" is empty')
+    return table
 
 if __name__ == "__main__":
     import uvicorn
