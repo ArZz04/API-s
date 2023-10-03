@@ -1,10 +1,19 @@
 from fastapi import FastAPI, Query
+from fastapi.middleware.cors import CORSMiddleware
+
 from db.connnector import get_table 
 from db.connector_local import create_connection, execute_query
 
 from typing import List
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Puedes ajustar esto para permitir solo un dominio específico si es necesario
+    allow_methods=["*"],  # Puedes limitar los métodos HTTP permitidos si es necesario
+    allow_headers=["*"],  # Puedes limitar los encabezados permitidos si es necesario
+)
 
 @app.get('/')
 def main_route():

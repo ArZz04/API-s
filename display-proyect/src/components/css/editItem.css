@@ -1,0 +1,50 @@
+/* EditItem.css */
+
+/* Contenedor principal */
+.edit-item-container {
+    background-color: #f5f5f5; /* Fondo gris claro */
+    padding: 20px;
+    border: 1px solid #ddd; /* Borde delgdo gris */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    width: 100%;
+  }
+  
+  /* Título del formulario */
+  .form-title {
+    font-size: 24px; /* Tamaño del texto del título */
+    margin-bottom: 20px; /* Margen inferior para separarlo del contenido */
+  }
+  
+  /* Campos de entrada de texto */
+  .input-field {
+    width: 100%; /* Ancho completo del campo de entrada */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Margen inferior para separar los campos */
+    border: 1px solid #ccc; /* Borde delgdo gris */
+    border-radius: 4px; /* Bordes redondeados */
+  }
+  
+  /* Botón de guardar */
+  .save-button {
+    background-color: #007bff; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre él */
+    font-size: 16px; /* Tamaño del texto del botón */
+  }
+  
+  /* Estilo cuando se pasa el mouse sobre el botón */
+  .save-button:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+  }
+  
+  /* Estilo para los mensajes de error */
+  .error-message {
+    color: #dc3545; /* Texto rojo */
+    font-size: 14px; /* Tamaño del texto de error */
+    margin-top: 5px; /* Margen superior para separarlo del campo */
+  }
+  
