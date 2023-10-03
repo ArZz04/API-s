@@ -1,0 +1,9 @@
+
+Para poder realizar un commit en git debes tener la extension de gitlens
+al tener el codiog escrito escribes en terminal git:
+
+- git commit -, "detalles del commit"
+- git push
+
+y listo, se hace el push
+
